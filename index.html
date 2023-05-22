@@ -1,0 +1,451 @@
+<!--<?php 
+    // Disqus redirection
+    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . 'disqusRedirection.php';
+    
+    // Get the reCaptcha lib
+    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . 'reCaptcha.php';
+    $reCaptcha = new Captcha();
+    
+    // Automatically resize all the images for products and blog
+    // You could access this script by hand to improve performance
+    require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . 'image.php';
+?>-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/javascript">
+            var options = {
+                mainColor: {
+                    description: "Main color",
+                    select: "body",
+                    attr: 'data-color',
+                    type: 'color',
+                    default: "#ff8d36"
+                },
+                anchorColor: {
+                    description: "Anchors color",
+                    select: "body",
+                    attr: 'data-anchor-color',
+                    type: 'color',
+                    default: "#ff8d36"
+                },
+                layout: {
+                    description: "Layout",
+                    select: "body",
+                    attr: 'data-layout',
+                    type: 'array',
+                    values: ['boxed', 'full-width'],
+                    default: 'boxed',
+                },
+                showClock: {
+                    description: "Show clock",
+                    select: "body",
+                    attr: 'data-clock',
+                    type: 'array',
+                    values: ["yes","no"],
+                    default: "yes",
+                },
+                navigation: {
+                    description: "Arrow keys navigation",
+                    select: "body",
+                    attr: 'data-navigation',
+                    type: 'array',
+                    values: ["yes","no"],
+                    default: "yes",
+                },
+                navigationHelper: {
+                    description: "Arrow keys navigation helper",
+                    select: "body",
+                    attr: 'data-navigation-helper',
+                    type: 'array',
+                    values: ["yes","no"],
+                    default: "yes",
+                },
+            };
+        </script>
+        <script type="text/javascript" src="http://preview.stephino.com/js/frame.js"></script>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <title>Frank</title>
+        <!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
+        <link rel="icon" type="image/png" href="favicon.ico">
+        <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/ie.css"/>
+        <link rel="stylesheet" href="css/fontello.css"/>
+        <link rel="stylesheet" href="css/settings.css"/>
+        <link rel="stylesheet" href="css/captions.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body data-color="#1abb9c" data-clock="yes" data-layout="boxed">
+        <div class="container">
+            <div class="upper-form row">
+                <div class="slate">
+                    <h1>Contact us <span>Don't hesitate to contact us</span></h1>
+                    <form method="post" action="php/contact.php" class="validate text-center">
+                        <div class="initial-input">
+                            <input class="form-control" name="name" type="text" placeholder="Name" required />
+                            <input class="form-control" name="email" type="email" placeholder="E-mail" required />
+                            <textarea class="form-control" name="content" placeholder="Your message" required ></textarea>
+                        </div>
+                        <div class="captcha">
+                            <!--<?php echo $reCaptcha->html('clean');?>-->
+                        </div>
+                        <span class="btn btn-large btn-block submit"><i class="icon-ok icon-white"></i> Send</span>
+                    </form>
+                    <address>
+                        <strong>Stephino, Inc.</strong><br/>
+                        798 Folsom Ave, Suite 900<br/>
+                        San Francisco, CA 94108<br/>
+                        <abbr title="Phone">P:</abbr> (123)456-7890
+                    </address>
+                </div>
+                <div id="map-canvas" lat="52.508235" long="13.370839"></div>
+            </div>
+            <div class="header-band row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
+                        <!--<a href="javascript:void(0);" class="icon-s-rss"><span>Rss</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-delicious"><span>Delicious</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-500px"><span>500px</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-grooveshark"><span>Grooveshark</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-forrst"><span>Forrst</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-digg"><span>Digg</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-blogger"><span>Blogger</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-klout"><span>Klout</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-dropbox"><span>Dropbox</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-ebay"><span>Ebay</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-github-1"><span>Github 1</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-songkick"><span>Songkick</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-posterous"><span>Posterous</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-appnet"><span>Appnet</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-github"><span>Github</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-flickr"><span>Flickr</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-vimeo"><span>Vimeo</span></a>
+                        <a href="javascript:void(0);" class="icon-s-twitter"><span>Twitter</span></a>
+                        <a href="javascript:void(0);" class="icon-s-facebook"><span>Facebook</span></a>
+                        <a href="javascript:void(0);" class="icon-s-gplus"><span>Gplus</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-pinterest"><span>Pinterest</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-youtube"><span>Youtube</span></a>
+                        <a href="javascript:void(0);" class="icon-s-tumblr"><span>Tumblr</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-linkedin"><span>Linkedin</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-dribbble"><span>Dribbble</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-stumbleupon"><span>Stumbleupon</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-lastfm"><span>Lastfm</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-spotify"><span>Spotify</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-instagram"><span>Instagram</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-evernote"><span>Evernote</span></a>-->
+                        <a href="javascript:void(0);" class="icon-s-skype"><span>Skype</span></a>
+                        <!--<a href="javascript:void(0);" class="icon-s-paypal"><span>Paypal</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-picasa"><span>Picasa</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-soundcloud"><span>Soundcloud</span></a>-->
+                        <!--<a href="javascript:void(0);" class="icon-s-behance"><span>Behance</span></a>-->
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
+                        <span class="btn btn-info pull-right contact-toggle" close-text="Close form">Contact Us</span>
+                        <div class="clock pull-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-menu row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <div class="col-xs-12 col-sm-2 col-md-2 col-xl-2">
+                        <a class="logo" href="#">Frank</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-md-10 col-xl-10 menu-holder"></div>
+                </div>
+            </div>
+            <div class="home row" data-name="Home">
+                <div class="slider">
+                    <div class="fullwidthbanner-container revolution">
+                        <div class="fullwidthbanner">
+                          <ul>
+                            <li data-transition="fade"> <img src="img/slider/slider-bg1.jpg" alt="" />
+                              <div class="caption sfl bold" data-x="center" data-y="200" data-speed="500" data-start="100" data-easing="easeOutExpo">Welcome to Frank!</div>
+                              <div class="caption sfr lite" data-x="center" data-y="274" data-speed="500" data-start="900" data-easing="easeOutExpo">Multi-purpose one-page HTML template</div>
+                              <div class="caption sfb" data-x="center" data-y="345" data-speed="900" data-start="1600" data-easing="easeOutExpo"><a href="#!" class="back-to-top btn btn-blue btn-large">Get in Touch</a></div>
+                            </li>
+                            <li data-transition="fade"> <img src="img/slider/slider-transparent.png" style="background-color: #243433;" alt="" />
+                              <div class="caption sfl" data-x="500" data-y="115" data-speed="900" data-start="100" data-easing="easeOutSine"><img src="img/slider/slider-browser.png" alt="" /></div>
+                              <div class="caption sfl" data-x="800" data-y="180" data-speed="900" data-start="900" data-easing="easeOutSine"><img src="img/slider/slider-tablet.png" alt="" /></div>
+                              <div class="caption sfl" data-x="980" data-y="290" data-speed="900" data-start="1600" data-easing="easeOutSine"><img src="img/slider/slider-mobile.png" alt="" /></div>
+                              <div class="caption sfl bold" data-x="35" data-y="180" data-speed="900" data-start="1500" data-easing="easeOutExpo"><strong>Everything we build is</strong></div>
+                              <div class="caption sfr bold" data-x="35" data-y="240" data-speed="900" data-start="1800" data-easing="easeOutExpo"><strong><span class="color">responsive</span> &amp; high quality</strong></div>
+                              <div class="caption sfb" data-x="35" data-y="320" data-speed="900" data-start="2100" data-easing="easeOutExpo"><a href="#!" goto="Products" class="btn btn-green btn-large">View our products</a></div>
+                            </li>
+                            <li data-transition="fade"> <img src="img/slider/slider-bg2.jpg" alt="" />
+                              <div class="caption sfl" data-x="60" data-y="130" data-speed="900" data-start="100" data-easing="easeOutBounce"><img src="img/slider/slider-first1.png" alt="" /></div>
+                              <div class="caption sfr" data-x="60" data-y="130" data-speed="900" data-start="400" data-easing="easeOutBounce"><img src="img/slider/slider-first2.png" alt="" /></div>
+                              <div class="caption sft bold" data-x="590" data-y="200" data-speed="900" data-start="800" data-easing="easeOutExpo">Swipe effect, parallax</div>
+                              <div class="caption sfr bold" data-x="590" data-y="265" data-speed="900" data-start="1300" data-easing="easeOutExpo">and Disqus enabled</div>
+                              <div class="caption sfb" data-x="590" data-y="340" data-speed="900" data-start="1800" data-easing="easeOutExpo"><a href="javascript:void(0);" goto="Blog" class="btn btn-blue btn-large">Read our blog</a></div>
+                            </li>
+                            <li data-transition="fade"> <img src="img/slider/slider-transparent.png" style="background-color: #243433;" alt="" />
+                              <div class="caption lfr" data-x="600" data-y="115" data-speed="900" data-start="100" data-easing="easeOutSine"><img src="img/slider/slider-second.png" alt="" /></div>
+                              <div class="caption sfl bold" data-x="35" data-y="200" data-speed="900" data-start="1000" data-easing="easeOutExpo">Swipe effect on testimonials</div>
+                              <div class="caption sfl lite" data-x="35" data-y="265" data-speed="900" data-start="1500" data-easing="easeOutExpo">Secure Twitter API v1.1 integration</div>
+                              <div class="caption sfl" data-x="35" data-y="340" data-speed="900" data-start="2000" data-easing="easeOutExpo"><a href="#!" goto="Testimonials" class="btn btn-green btn-large">Read our tweets</a></div>
+                            </li>
+                          </ul>
+                          <div class="tp-bannertimer tp-bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas"></div>
+            </div>
+            <div class="products row" data-name="Products">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                        <h1>Products <span>We take pride in our work</span></h1>
+                        <ul class="sort">
+                            <li rel="*" class="active">All</li>
+                            <li rel="design">Design</li>
+                            <li rel="web-development">web development</li>
+                        </ul>
+                    </div>
+                    <div class="isotope">
+                        <div rel="design" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/1.jpg" title="Having a good hindsight" subtitle="Design, animation"/>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tellus risus. Sed sollicitudin elit lectus, tempus porttitor odio fermentum quis. Nulla et odio iaculis, blandit dui vitae, suscipit augue. Proin elementum, ipsum quis bibendum ullamcorper, felis nulla commodo dolor, non rhoncus ligula lorem eget nisl. Sed quis porttitor nisi. Fusce sit amet metus tincidunt neque sollicitudin venenatis. In a mauris neque. Praesent fringilla nisl at varius lacinia. Donec sagittis convallis augue, vel ornare enim facilisis vel. Ut tincidunt dui mauris, porta laoreet felis elementum et. Aenean volutpat nec ante quis tristique.</p>
+                            </div>
+                        </div>
+                        <div rel="web-development" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/2.jpg" title="Monkey see but monkey don't do" subtitle="Web development, programming, fun"/>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in metus ultricies, dignissim orci id, laoreet magna. Praesent sit amet mattis ligula. Mauris nec rhoncus libero, ac congue tellus. Duis eu vestibulum sapien. Quisque at neque luctus, vulputate leo in, vestibulum orci. Sed porttitor, turpis non aliquet scelerisque, leo eros semper orci, et pretium ante libero vitae quam. Pellentesque nisl mi, consectetur suscipit massa id, tincidunt feugiat urna. </p>
+                            </div>
+                        </div>
+                        <div rel="design" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/3.jpg" title="It's a bird, no, it's a plane" subtitle="Framework, illustration"/>
+                            <div class="content">
+                                <p>Nulla tristique semper nibh pulvinar suscipit. Integer sit amet risus rhoncus, semper odio quis, cursus mauris. Etiam et eros arcu. Quisque sed ipsum laoreet, faucibus massa mattis, ultrices velit. Aliquam sed arcu sapien. Morbi non eros vel orci venenatis fringilla. Vivamus luctus sapien mollis nisl volutpat, a mollis ipsum sodales. Vivamus urna tellus, imperdiet ac euismod vitae, placerat et erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec pulvinar orci vel placerat volutpat. Sed imperdiet nibh id condimentum suscipit. Nulla et felis sed lorem vehicula sollicitudin pretium facilisis ipsum. Nunc rutrum turpis massa, eu tempus lectus congue ut. Donec suscipit, sem a auctor congue, leo magna condimentum tellus, non bibendum mi velit vitae eros. </p>
+                            </div>
+                        </div>
+                        <div rel="design" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/4.jpg" title="Silently waiting" subtitle="Typography, layout"/>
+                            <div class="content">
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum at lacus libero. Pellentesque accumsan sed dolor quis pretium. Nullam gravida consequat urna et pulvinar. Mauris interdum dolor non ligula malesuada fringilla. Ut tellus justo, placerat a consequat ac, egestas a purus. Praesent vel ligula eros. Mauris mollis, nulla vitae ornare aliquet, magna augue rhoncus arcu, ac pulvinar neque magna quis lorem. Etiam et dui at neque gravida sollicitudin. Donec odio eros, rutrum eget purus quis, mollis scelerisque lacus. In massa elit, pulvinar vitae volutpat luctus, molestie sit amet massa. </p>
+                            </div>
+                        </div>
+                        <div rel="web-development" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/5.jpg" title="Flamingo frenzy" subtitle="CMS, IDE, MVC"/>
+                            <div class="content">
+                                <p>Nulla sit amet orci eu libero aliquam vulputate ac vel mauris. Proin vitae mi non mauris ultrices molestie quis vel orci. Praesent scelerisque sollicitudin turpis, nec pulvinar leo molestie ac. Mauris condimentum, enim id placerat tincidunt, ante augue sagittis lacus, non hendrerit nulla mauris vitae nisl. Mauris vulputate sapien sed massa semper ultricies. Vestibulum adipiscing eu libero ac ullamcorper. Ut porttitor arcu arcu. Nunc sed molestie lorem. Nullam vitae turpis faucibus, pulvinar nulla vitae, feugiat nunc. Curabitur ut semper augue. Morbi vel risus neque. Nulla sodales nisl mi, et auctor arcu consectetur nec. Donec quis arcu libero. </p>
+                            </div>
+                        </div>
+                        <div rel="design" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/6.jpg" title="Dearest possessions" subtitle="Art, illustration"/>
+                            <div class="content">
+                                <p>Aenean mauris augue, auctor id faucibus a, rhoncus non ipsum. Nunc placerat risus risus. Maecenas scelerisque arcu odio, et egestas mi feugiat sagittis. Fusce et faucibus odio. Curabitur aliquam eros et risus vehicula, vitae molestie lacus fermentum. Nam dictum, metus ultrices pulvinar ultricies, nulla mi consequat massa, id congue nisi diam at ipsum. Vivamus fringilla sollicitudin luctus. Etiam rhoncus vehicula nunc nec consequat. Donec aliquet tristique ullamcorper. Nunc accumsan, dolor ut suscipit consectetur, enim nibh consequat purus, eget tristique mi elit sed eros. Nulla in rhoncus urna. Mauris porta, turpis eu mattis dictum, nisi nisi bibendum odio, eu convallis felis sem sit amet metus. Morbi ante neque, aliquam adipiscing tempor a, dictum vel magna. </p>
+                            </div>
+                        </div>
+
+                        <div rel="web-development" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/7.jpg" title="Care for a swim?" subtitle="Programming, architecture, CMS"/>
+                            <div class="content">
+                                <p>Nunc blandit velit pretium massa vehicula accumsan aliquet non orci. Donec porta orci id tempor auctor. Quisque iaculis odio nisl, id tincidunt tortor faucibus condimentum. Pellentesque sed malesuada sapien. Suspendisse id urna eleifend mi malesuada volutpat vitae a est. Nulla sit amet vehicula nibh. Vivamus tempor ligula nec placerat porttitor. Maecenas risus felis, mollis ac urna sit amet, mollis sagittis purus. Mauris eros libero, eleifend ut aliquet vitae, dignissim eu nisl. </p>
+                            </div>
+                        </div>
+                        <div rel="design" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/8.jpg" title="Focus on the big things" subtitle="Animation, layout"/>
+                            <div class="content">
+                                <p>Nam gravida posuere nisi, ac egestas nunc tempor a. Fusce nec vehicula nulla. Vivamus hendrerit lobortis nunc, non vehicula erat iaculis faucibus. Nulla et aliquam lorem. Pellentesque dictum ornare mi. Praesent eget erat lacinia, rhoncus nunc sit amet, porttitor turpis. Quisque pharetra sed leo sit amet imperdiet. Nam cursus porta semper. Cras consectetur, odio quis luctus fringilla, magna neque iaculis ligula, ac auctor leo felis ac lorem. </p>
+                            </div>
+                        </div>
+                        <div rel="web-development" class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/products/9.jpg" title="Get some perspective" subtitle="An awesome project"/>
+                            <div class="content">
+                                <p>Curabitur sed sem interdum justo varius blandit. Fusce eu suscipit nibh, sed feugiat elit. Cras augue sapien, semper quis accumsan et, ultrices non elit. In eget mauris nisi. In quis sem vehicula, sagittis diam eu, tincidunt lacus. Maecenas sed nunc vitae lacus consectetur condimentum ut id felis. In ullamcorper diam ut augue laoreet, et vulputate lectus malesuada. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog row" data-disqus-shortname="stephino-frank" data-disqus-key="5015FqLahE3hmv72BkmQkBAdYAvhom6SDsxIpBr9fqqmvDjycPDXXEM2E57Cf2h4" data-name="Blog">
+                <div class="parallax" data-src="img/parallax/1.jpg" data-height="150" data-direction="0">
+                    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6">
+                            <p>WordPress ready<br/>WordPress Version Available!</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 text-right">
+                            <span class="btn btn-info btn-lg"><a target="_blank" href="http://themewarlock.com/stephino-frank">Buy WordPress Theme Now</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                        <h1>Blog <span>See what we've been up to</span></h1>
+                    </div>
+                    <div class="swipe">
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/1.jpg" id="1" title="A star is born" subtitle="The new kid on the block"/>
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tellus risus. Sed sollicitudin elit lectus, tempus porttitor odio fermentum quis. Nulla et odio iaculis, blandit dui vitae, suscipit augue. Proin elementum, ipsum quis bibendum ullamcorper, felis nulla commodo dolor, non rhoncus ligula lorem eget nisl. Sed quis porttitor nisi. Fusce sit amet metus tincidunt neque sollicitudin venenatis. In a mauris neque. Praesent fringilla nisl at varius lacinia. Donec sagittis convallis augue, vel ornare enim facilisis vel. Ut tincidunt dui mauris, porta laoreet felis elementum et. Aenean volutpat nec ante quis tristique.</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/3.jpg" id="2" title="Launching our new product" subtitle="This is really awesome" />
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in metus ultricies, dignissim orci id, laoreet magna. Praesent sit amet mattis ligula. Mauris nec rhoncus libero, ac congue tellus. Duis eu vestibulum sapien. Quisque at neque luctus, vulputate leo in, vestibulum orci. Sed porttitor, turpis non aliquet scelerisque, leo eros semper orci, et pretium ante libero vitae quam. Pellentesque nisl mi, consectetur suscipit massa id, tincidunt feugiat urna. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/5.jpg" id="3" title="Get it while it's fresh" subtitle="Use our new plugin for free" />
+                            <div class="content">
+                                <p>Nulla tristique semper nibh pulvinar suscipit. Integer sit amet risus rhoncus, semper odio quis, cursus mauris. Etiam et eros arcu. Quisque sed ipsum laoreet, faucibus massa mattis, ultrices velit. Aliquam sed arcu sapien. Morbi non eros vel orci venenatis fringilla. Vivamus luctus sapien mollis nisl volutpat, a mollis ipsum sodales. Vivamus urna tellus, imperdiet ac euismod vitae, placerat et erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec pulvinar orci vel placerat volutpat. Sed imperdiet nibh id condimentum suscipit. Nulla et felis sed lorem vehicula sollicitudin pretium facilisis ipsum. Nunc rutrum turpis massa, eu tempus lectus congue ut. Donec suscipit, sem a auctor congue, leo magna condimentum tellus, non bibendum mi velit vitae eros. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/6.jpg" id="4" title="Down the rabbit whole" subtitle="There is no turning back" />
+                            <div class="content">
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum at lacus libero. Pellentesque accumsan sed dolor quis pretium. Nullam gravida consequat urna et pulvinar. Mauris interdum dolor non ligula malesuada fringilla. Ut tellus justo, placerat a consequat ac, egestas a purus. Praesent vel ligula eros. Mauris mollis, nulla vitae ornare aliquet, magna augue rhoncus arcu, ac pulvinar neque magna quis lorem. Etiam et dui at neque gravida sollicitudin. Donec odio eros, rutrum eget purus quis, mollis scelerisque lacus. In massa elit, pulvinar vitae volutpat luctus, molestie sit amet massa. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/7.jpg" id="5" title="Breaking news" subtitle="Accomplishing the impossible"/>
+                            <div class="content">
+                                <p>Aenean mauris augue, auctor id faucibus a, rhoncus non ipsum. Nunc placerat risus risus. Maecenas scelerisque arcu odio, et egestas mi feugiat sagittis. Fusce et faucibus odio. Curabitur aliquam eros et risus vehicula, vitae molestie lacus fermentum. Nam dictum, metus ultrices pulvinar ultricies, nulla mi consequat massa, id congue nisi diam at ipsum. Vivamus fringilla sollicitudin luctus. Etiam rhoncus vehicula nunc nec consequat. Donec aliquet tristique ullamcorper. Nunc accumsan, dolor ut suscipit consectetur, enim nibh consequat purus, eget tristique mi elit sed eros. Nulla in rhoncus urna. Mauris porta, turpis eu mattis dictum, nisi nisi bibendum odio, eu convallis felis sem sit amet metus. Morbi ante neque, aliquam adipiscing tempor a, dictum vel magna. </p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-xl-4">
+                            <img src="img/blogs/8.jpg" id="6" title="A design love affair" subtitle="The best of the best, sir!" />
+                            <div class="content">
+                                <p>Curabitur sed sem interdum justo varius blandit. Fusce eu suscipit nibh, sed feugiat elit. Cras augue sapien, semper quis accumsan et, ultrices non elit. In eget mauris nisi. In quis sem vehicula, sagittis diam eu, tincidunt lacus. Maecenas sed nunc vitae lacus consectetur condimentum ut id felis. In ullamcorper diam ut augue laoreet, et vulputate lectus malesuada. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clients row" data-name="Clients">
+                <div class="parallax" id="p2" data-src="img/parallax/2.jpg" data-height="500" data-direction="0">
+                    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            <h1>Clients <span>The client is always right</span></h1>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img data-href="#" src="img/clients/1.png" alt="Client 1"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/2.png" alt="Client 2"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/3.png" alt="Client 3"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/4.png" alt="Client 4"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/5.png" alt="Client 5"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/6.png" alt="Client 6"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/7.png" alt="Client 7"/>
+                        </div>
+                        <div class="client col-xs-3 col-sm-3 col-md-2 col-xl-2">
+                            <img src="img/clients/8.png" alt="Client 8"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing row" data-name="Pricing">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                        <h1>Pricing <span>Get the plan that fits your needs</span></h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Starter <span>$19</span></th>
+                                    <th>Basic <span>$29</span></th>
+                                    <th class="active">Pro <span>$49</span></th>
+                                    <th>Ultra <span>$99</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="first">
+                                    <td><strong>5</strong> users</td>
+                                    <td><strong>10</strong> users</td>
+                                    <td class="active"><strong>100</strong> users</td>
+                                    <td><strong>Unlimited</strong> users</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>10</strong> projects</td>
+                                    <td><strong>50</strong> projects</td>
+                                    <td class="active"><strong>Unlimited</strong> projects</td>
+                                    <td><strong>Unlimited</strong> projects</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>10GB</strong> amount of space</td>
+                                    <td><strong>50GB</strong> amount of space</td>
+                                    <td class="active"><strong>1TB</strong> amount of space</td>
+                                    <td><strong>Unlimited</strong> amount of space</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5</strong> e-mail accounts</td>
+                                    <td><strong>10</strong> e-mail accounts</td>
+                                    <td class="active"><strong>100</strong> e-mail accounts</td>
+                                    <td><strong>Unlimited</strong> e-mail accounts</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="btn btn-info">Sign Up</span></td>
+                                    <td><span class="btn btn-info">Sign Up</span></td>
+                                    <td class="active"><span class="btn btn-info">Sign Up</span></td>
+                                    <td><span class="btn btn-info">Sign Up</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials row" data-name="Testimonials">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    <h1>Testimonials <span>Our customers love us</span></h1>
+                    <div class="swipe">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            Phasellus porttitor ante nec eros aliquet, vel egestas augue dictum. Nulla in odio orci. Vestibulum ullamcorper viverra urna, nec porta eros tempus id. Vestibulum non urna mollis, pulvinar justo at, aliquam tellus. Integer ac pulvinar nibh. Vivamus convallis blandit ornare.
+                            <span class="author" data-img="img/testimonials/1.jpg">John Doe</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            Aliquam tincidunt nisi sit amet nulla scelerisque, gravida sodales elit fermentum. Proin nec lacus mauris. Fusce risus justo, consectetur in libero vitae, tristique dictum dui.
+                            <span class="author" data-img="img/testimonials/2.jpg">Jane Doe</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            Proin dolor mi, dignissim non risus eget, consequat pulvinar nibh. Fusce nec justo id mauris vehicula semper. Vivamus id libero erat. Nulla tincidunt mollis cursus. Quisque eget tempor metus. Ut non eros vitae sem porttitor feugiat. 
+                            <span class="author" data-img="img/testimonials/3.jpg">Mike Doe</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            Phasellus porttitor ante nec eros aliquet, vel egestas augue dictum. Nulla in odio orci. Vestibulum ullamcorper viverra urna, nec porta eros tempus id. Vestibulum non urna mollis, pulvinar justo at, aliquam tellus. Integer ac pulvinar nibh. Vivamus convallis blandit ornare.
+                            <span class="author" data-img="img/testimonials/4.jpg">Kate Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer">
+                <div class="parallax" id="p2" data-static="0" data-src="img/parallax/3.jpg" data-height="400" data-direction="0">
+                    <div class="col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                            <div class="tweets" data-username="potrivit_inc" data-speed="3000" data-count="8" data-loading="Loading tweets..." data-no-tweets="There are no tweets yet..."></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy col-xs-12 col-xs-offset-0 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xl-10 col-xl-offset-1">
+                    Copyright &copy; 2013 <a href="javascript:void(0);">Stephino</a>. All rights reserved.
+                    <div class="back-to-top"><i class="icon-heart"></i>Contact us</div>
+                </div>
+            </div>
+        </div>
+        <!--Javascript-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/storyline.js"></script>
+        <script type="text/javascript" src="js/jquery.revolution.min.js"></script>
+        <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </body>
+</html>
